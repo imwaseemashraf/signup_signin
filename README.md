@@ -6,6 +6,8 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 ![Alt text](assets/images/Screenshot.png)
+<img src="assets/images/Screenshot.png" alt="Login" width="300" height="600">
+
 
 A few resources to get you started if this is your first Flutter project:
 
