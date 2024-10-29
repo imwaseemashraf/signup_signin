@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:signup_signin/components/buildtextfielswidget.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -27,11 +28,15 @@ class SignIn extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              _buildTextField("Enter Your Mobile Number", "+92 3001234567",
-                  const Icon(Icons.check_circle)),
+              BuildTextFieldWidget(
+                  label: "Enter Your Mobile Number",
+                  hint: "+92 3001234567",
+                  icon: const Icon(Icons.check_circle)),
               const Gap(10),
-              _buildTextField("Enter Your Password", "***********",
-                  const Icon(CupertinoIcons.eye),
+              BuildTextFieldWidget(
+                  label: "Enter Your Password",
+                  hint: "***********",
+                  icon: const Icon(CupertinoIcons.eye),
                   isPassword: true),
               const Gap(10),
               const Align(
@@ -104,47 +109,6 @@ class SignIn extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildTextField(String label, String hint, Icon icon,
-      {bool isPassword = false}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 10.0),
-          child: Text(
-            label,
-            style: const TextStyle(
-              fontWeight: FontWeight.normal,
-            ),
-          ),
-        ),
-        const Gap(10),
-        Container(
-          height: 43,
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Colors.grey[300],
-          ),
-          child: TextField(
-            obscureText: isPassword,
-            textAlign: TextAlign.start,
-            decoration: InputDecoration(
-                border: InputBorder.none,
-                errorBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                hintText: hint,
-                isDense: false,
-                hoverColor: Colors.red,
-                // isCollapsed: true,
-                contentPadding: const EdgeInsets.symmetric(vertical: 7),
-                suffixIcon: icon),
-          ),
-        )
-      ],
     );
   }
 
