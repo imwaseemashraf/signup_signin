@@ -7,13 +7,13 @@ class BuildTextFieldWidget extends StatelessWidget {
   String label;
   String hint;
   Icon icon;
-  bool? isPassword = false;
+  bool isPassword;
   BuildTextFieldWidget(
       {super.key,
       required this.label,
       required this.hint,
       required this.icon,
-      this.isPassword});
+      required this.isPassword});
 
   @override
   Widget build(BuildContext context) {

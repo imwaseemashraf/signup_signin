@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:signup_signin/components/buildtextfielswidget.dart';
+import 'package:signup_signin/screens/forgetpassword.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -29,9 +30,11 @@ class SignIn extends StatelessWidget {
               ),
               const Spacer(),
               BuildTextFieldWidget(
-                  label: "Enter Your Mobile Number",
-                  hint: "+92 3001234567",
-                  icon: const Icon(Icons.check_circle)),
+                label: "Enter Your Mobile Number",
+                hint: "+92 3001234567",
+                icon: const Icon(Icons.check_circle),
+                isPassword: false,
+              ),
               const Gap(10),
               BuildTextFieldWidget(
                   label: "Enter Your Password",
@@ -39,12 +42,22 @@ class SignIn extends StatelessWidget {
                   icon: const Icon(CupertinoIcons.eye),
                   isPassword: true),
               const Gap(10),
-              const Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "Forget Password? ",
-                  style: TextStyle(
-                    fontWeight: FontWeight.normal,
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ForgetPassword(),
+                    ),
+                  );
+                },
+                child: const Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    "Forget Password? ",
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
                 ),
               ),
