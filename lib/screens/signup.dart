@@ -33,19 +33,29 @@ class SignUp extends StatelessWidget {
                           decoration: TextDecoration.none,
                           fontSize: 12,
                         )),
-                    Container(
-                      height: height / 15,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Colors.grey),
-                      ),
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          hintText: "+92 1234567",
-                          errorBorder: InputBorder.none,
-                          border: InputBorder.none,
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
+                    TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "+92 1234567",
+                        filled: true,
+                        fillColor: Colors.grey[200],
+                        contentPadding: EdgeInsets.symmetric(
+                            vertical: height / 30,
+                            horizontal: 16), // adjust padding as needed
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(color: Colors.grey),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(color: Colors.grey),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(color: Colors.grey),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(color: Colors.red),
                         ),
                       ),
                     )

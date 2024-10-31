@@ -30,27 +30,40 @@ class BuildTextFieldWidget extends StatelessWidget {
           ),
         ),
         const Gap(10),
-        Container(
-          height: 43,
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Colors.grey[300],
-          ),
-          child: TextField(
-            obscureText: isPassword!,
-            textAlign: TextAlign.start,
-            decoration: InputDecoration(
-                border: InputBorder.none,
-                errorBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                hintText: hint,
-                isDense: false,
-                hoverColor: Colors.red,
-                // isCollapsed: true,
-                contentPadding: const EdgeInsets.symmetric(vertical: 7),
-                suffixIcon: icon),
-          ),
+        TextFormField(
+          obscureText: isPassword!,
+          textAlign: TextAlign.start,
+          validator: (value) {
+            if (value!.isEmpty) {
+              return "please fill the $label";
+            }
+            return null;
+          },
+          decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.grey[200],
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                // borderSide: const BorderSide(color: Colors.grey),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: Colors.grey),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: Colors.red),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: Colors.grey),
+              ),
+              hintText: hint,
+              isDense: false,
+              hoverColor: Colors.red,
+              // isCollapsed: true,
+              contentPadding: const EdgeInsets.symmetric(horizontal: 10),
+              suffixIcon: icon),
         )
       ],
     );
